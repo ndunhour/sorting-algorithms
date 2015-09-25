@@ -1,10 +1,13 @@
-// Merge Sort
+/*
 
-// Continuously divides the array length in half until two numbers
-// remain to compare which is lower.  The lower number is pushed into
-// an array.  The remaining numbers continue comparing, the smaller
-// number is pushed into the array until the last (largest) number remains.
+Merge Sort
 
+Continuously divide the array length in half until one number remains on the
+left side and one on the right.  When one number remains, compare the two
+numbers, the lower number goes to the left, remerge the array.  Continue to
+compare the left and right side of the divided array while remerging the array.
+
+*/
 
 var array = [3,7,1,9,3,2,6,4];
 
@@ -30,7 +33,7 @@ function mergeSort(array) {
 function merge(left, right)
 {
     var result = [];
-  // compare the left side and the right side of each remerged array
+  // compare the left side and the right side of each index array
     while (left.length && right.length) {
         // if the left number is smaller push into the result array
         if (left[0] <= right[0]) {
@@ -40,7 +43,7 @@ function merge(left, right)
             result.push(right.shift());
         }
     }
-
+    // continue to compare the numbers and insert into the array
     while (left.length)
         result.push(left.shift());
 
