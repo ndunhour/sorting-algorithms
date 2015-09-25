@@ -15,6 +15,7 @@ Continuously divide the array length in half until one number remains on the lef
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Insertion Sort
 
+Compares an current integer to previous integer.  If the previous integer is larger then the current integer continues down the array until previous integer is smaller than current integer.  Insert it current integer in that index.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Selection Sort
