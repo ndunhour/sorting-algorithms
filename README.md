@@ -10,7 +10,7 @@ Bubble sort sorts through a collection of data by comparing two values and swapp
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Merge Sort
 
-Continuously divides the array length in half until two numbers remain to compare which is lower.  The lower number is pushed into an array.  The remaining numbers continue comparing, the smaller number is pushed into the array until the last (largest) number remains.
+Continuously divide the array length in half until one number remains on the left side and one on the right.  When one number remains, compare the two numbers, the lower number goes to the left, remerge the array.  Continue to compare the left and right side of the divided array while remerging the array.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Insertion Sort
