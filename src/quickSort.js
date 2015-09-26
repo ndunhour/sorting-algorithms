@@ -1,14 +1,17 @@
 /*
 Quick Sort
 
-
-
+Quick Sort is a sorting process which finds a pivit point of an array.  The value
+at the pivot point is the pivot value.  The rest of the values in the array is compared
+to the pivot value, 'less' and 'more'.  At comparison time values are split into two groups.  This process
+can be repeated recursivly.  At the end of recursive process the groups are conctinated
+back together using 'less' + 'pivotValue' + 'more'.
 
 */
 
 
 
-
+var array = [8,3,5,1,9,4];
 function quickSort(array) {
 
 // base case
@@ -19,10 +22,7 @@ function quickSort(array) {
   // find the pivot point of the array by dividing the array in half
   var pivot = Math.floor((array.length - 1)/2);
   // set the pivot value
-  var pivotValue = array[pivot]; // 5
-  // take out the pivotValue
-  // console.log(array);
-  // console.log(array);
+  var pivotValue = array[pivot];
   // create less array to hold the numbers less then pivot number
   var less = [];
   // create a more array to hold the numbers more then pivot number
@@ -37,17 +37,7 @@ function quickSort(array) {
       more.push(array[i]); // [7,8]
     }
   }
-
-      // console.log('less', less, 'more', more);
-      // console.log('quickSort(less)', quickSort(less));
-      // console.log('quickSort(more)', quickSort(mo));
-
-debugger;
   return (quickSort(less)).concat([pivotValue], quickSort(more));
 }
 
-
-var array = [3,1,7,5,2,8,4];
-
-quickSort(array);
-console.log(array);
+console.log(quickSort(array));
