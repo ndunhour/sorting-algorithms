@@ -5,8 +5,6 @@ Bubble Sort
 
 Bubble sort sorts through a collection of data by comparing two values and swapping out if need be.  With each comparison, the smaller number is swapped with the larger number towards the begining of the array.  The larger number continues to the end of the array.  This process continues until array is in order from least to greatest.
 
-
-
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Merge Sort
 
@@ -20,6 +18,7 @@ Compares an current integer to previous integer.  If the previous integer is lar
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Selection Sort
 
+Takes the first integer of the array and stores the integer as the smallest number.  The stored number is compared with the rest of the numbers in the array.  If a lower number is found, that number is stored.  That number is compared to the rest of the numbers of the array for the smallest number until the end of the array.  Once reaching the end of the array the smallest number stored in the that index is swapped with the first index.  The integer that was in the first index goes into the index where the smallest number was found.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Quick Sort
