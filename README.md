@@ -23,6 +23,10 @@ Takes the first integer of the array and stores the integer as the smallest numb
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Quick Sort
 
+Quick Sort is a sorting process which finds a pivit point of an array.  The value
+at the pivot point is the pivot value.  The rest of the values in the array is compared
+to the pivot value, 'less' and 'more'.  At comparison time values are split into two groups.  This process can be repeated recursivly.  At the end of recursive process the groups are conctinated back together using 'less' + 'pivotValue' + 'more'.
+
 
 
 
