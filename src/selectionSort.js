@@ -8,7 +8,7 @@ stored.  That number is compared to the rest of the numbers of the
 array for the smallest number until the end of the array.  Once
 reaching the end of the array the smallest number stored in the that
 index is swapped with the first index.  The integer that was in the
-first index goes into the index where the smallest number was found.
+git first index goes into the index where the smallest number was found.
 */
 
 
