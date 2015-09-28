@@ -30,45 +30,33 @@ function bubbleSort(unsortedArray) {
         swap = true;
       }
     }
-        console.log('work you piece of shit');
+
     // condition that indicats a swap as false and to exit the do-while
   } while (swap);
-  console.log(unsortedArray);
-  // return unsortedArray;
+
+  return unsortedArray;
 }
-bubbleSort(unsortedArray);
 
 
 // //============= div id="bubbleGraph"===============//
-// function createGraph(unsortedArray) {
+function createGraph(unsortedArray) {
 
-//   var counter = 0;
+  var counter = 0;
 
-//   for(var i = 0; i < unsortedArray.length; i++) {
+  for(var i = 0; i < unsortedArray.length; i++) {
 
-//     var p = document.createElement('div');
-//     p.style.background = 'black';
-//     p.style.width = unsortedArray[i] + 50 + 'px';
-//     p.style.height = '30px';
-//     p.setAttribute('id', counter++);
-//     var element = document.getElementById('bubbleGraph');
-//     element.appendChild(p);
-//   }
-// }
+    var p = document.createElement('div');
+    p.style.background = 'black';
+    p.style.width = unsortedArray[i] * 50 + 'px';
+    p.style.height = '30px';
+    p.setAttribute('id', counter++);
+    var element = document.getElementById('bubbleGraph');
+    element.appendChild(p);
+  }
+}
 
 
-// window.onload = function(){
-//   createGraph(unsortedArray);
-//   // bubbleSort(unsortedArray);
-// };
+window.onload = function(){
+  createGraph(unsortedArray);
+};
 // //============= div id="runIt"===============//
-
-// var runIt_button = document.createElement('button');
-// runIt_button.appendChild(document.createTextNode('RUN IT'));
-// runIt_button.addEventListener('click', function() {
-//   bubbleSort(unsortedArray);
-//   });
-
-
-// var button = document.getElementById('button');
-// button.appendChild(runIt_button);
