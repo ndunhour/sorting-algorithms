@@ -7,34 +7,43 @@
 // order from least to greatest.
 
 window.onload = function(){
+  document.getElementById('bubbleGraph').innerHTML = '';
   createGraph(numArray);
 };
 
-
-var numArray = [10,4,7,11];
+var numArray = [10,4,7,1,2,3,15,9];
 
 function bubbleSort(numArray) {
 
-  var interval = setTimeout(bubbleSort(), 1000);
   var swap = false;
   var counter = 0;
-  do {
-    swap = false;
-    for ( var i = 0; i < numArray.length;i++) {
-      var temp;
-      if(numArray[i] > (numArray[i+1])) {
-        temp = numArray[i];
-        numArray[i] = numArray[i+1];
-        numArray[i+1] = temp;
-        swap = true;
-        counter ++;
-document.getElementById('bubbleGraph').innerHTML = '';
-  createGraph(numArray);
-      }
-    }
+
+    // body...
+      do {
+        swap = false;
+  setInterval(function () {
+        for ( var i = 0; i < numArray.length;i++) {
+          var temp;
+          if(numArray[i] > (numArray[i+1])) {
+            temp = numArray[i];
+            numArray[i] = numArray[i+1];
+            numArray[i+1] = temp;
+            swap = true;
+            counter ++;
+            document.getElementById('bubbleGraph').innerHTML = '';
+            createGraph(numArray);
+          }
+        }
+
+  }, 1000);
+
+
   } while (swap);
-  console.log(numArray);
-  return numArray;
+
+
+
+
+
 }
 
 
@@ -64,9 +73,8 @@ var runIt = document.createElement('button');
 runIt.appendChild(document.createTextNode('RUN IT'));
 runIt.addEventListener('click', function() {
   bubbleSort(numArray);
+  // var intervalID = setInterval(function() {bubbleSort(numArray);}, 3000);
 });
 var runItBut = document.getElementById('button');
 runItBut.appendChild(runIt);
-
-
 
