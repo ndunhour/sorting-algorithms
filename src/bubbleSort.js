@@ -6,57 +6,67 @@
 // continues to the end of the array.  This process continues until array is in
 // order from least to greatest.
 
+window.onload = function(){
+  createGraph(numArray);
+};
 
-var unsortedArray = [3,7,1, 5,8,15,11];
-function bubbleSort(unsortedArray) {
-  // create a do while loop.
-  // purpose of do-while is to test if swap happened in the for loop
 
+var numArray = [10,4,7,11];
+
+function bubbleSort(numArray) {
+
+  var interval = setTimeout(bubbleSort(), 1000);
   var swap = false;
+  var counter = 0;
   do {
-    // for loop iterates through the array
-    for(var i = 0; i < unsortedArray.length; i++) {
-      // temp storage for data during the swap
+    swap = false;
+    for ( var i = 0; i < numArray.length;i++) {
       var temp;
-      // comparing the current index with next to find the least on of the two
-      if(unsortedArray[i]>unsortedArray[i+1]) {
-        // assigning position unsortedArray[i] in the temp
-        temp = unsortedArray[i];
-        // assigning position unsortedArray[i+1] in position unsortedArray[i]
-        unsortedArray[i+1] = unsortedArray[i];
-        // assigning position unsortedArray[i+1] to data in temp
-        unsortedArray[i+1] = temp;
-        // indicate a swap occured
+      if(numArray[i] > (numArray[i+1])) {
+        temp = numArray[i];
+        numArray[i] = numArray[i+1];
+        numArray[i+1] = temp;
         swap = true;
+        counter ++;
+document.getElementById('bubbleGraph').innerHTML = '';
+  createGraph(numArray);
       }
     }
-
-    // condition that indicats a swap as false and to exit the do-while
   } while (swap);
-
-  return unsortedArray;
+  console.log(numArray);
+  return numArray;
 }
 
 
-// //============= div id="bubbleGraph"===============//
-function createGraph(unsortedArray) {
+// // //============= div id="bubbleGraph"===============//
+function createGraph(numArray) {
 
   var counter = 0;
 
-  for(var i = 0; i < unsortedArray.length; i++) {
+  for(var i = 0; i < numArray.length; i++) {
 
     var p = document.createElement('div');
+    p.appendChild(document.createTextNode(numArray[i]));
     p.style.background = 'black';
-    p.style.width = unsortedArray[i] * 50 + 'px';
+    p.style.width = numArray[i] * 35 + 'px';
     p.style.height = '30px';
     p.setAttribute('id', counter++);
+
     var element = document.getElementById('bubbleGraph');
     element.appendChild(p);
   }
 }
 
 
-window.onload = function(){
-  createGraph(unsortedArray);
-};
 // //============= div id="runIt"===============//
+
+var runIt = document.createElement('button');
+runIt.appendChild(document.createTextNode('RUN IT'));
+runIt.addEventListener('click', function() {
+  bubbleSort(numArray);
+});
+var runItBut = document.getElementById('button');
+runItBut.appendChild(runIt);
+
+
+
