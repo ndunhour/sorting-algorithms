@@ -11,7 +11,20 @@ window.onload = function(){
   createGraph(numArray);
 };
 
-var numArray = [10,4,7,1,2,3,15,9];
+var numArray = [];
+function randomNumber(min, max) {
+  for(var i=0; i<50; i++) {
+    var numGen = Math.floor(Math.random()*(max - min)) + min;
+    numArray.push(numGen);
+  }
+  console.log(numArray);
+}
+randomNumber(1, 50);
+
+
+
+
+
 
 function bubbleSort(numArray) {
 
