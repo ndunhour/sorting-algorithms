@@ -6,31 +6,88 @@
 // continues to the end of the array.  This process continues until array is in
 // order from least to greatest.
 
+window.onload = function(){
+  document.getElementById('bubbleGraph').innerHTML = '';
+  createGraph(numArray);
+};
 
-var array = [3,7,1];
-function bubbleSort(array) {
-  // create a do while loop.
-  // purpose of do-while is to test if swap happened in the for loop
+var numArray = [];
+function randomNumber(min, max) {
+  for(var i=0; i<50; i++) {
+    var numGen = Math.floor(Math.random()*(max - min)) + min;
+    numArray.push(numGen);
+  }
+  console.log(numArray);
+}
+randomNumber(1, 50);
+
+
+
+
+
+
+function bubbleSort(numArray) {
 
   var swap = false;
-  do {
-    // for loop iterates through the array
-    for(var i = 0; i < array.length; i++) {
-      // temp storage for data during the swap
-      var temp;
-      // comparing the current index with next to find the least on of the two
-      if(array[i]>array[i+1]) {
-        // assigning position array[i] in the temp
-        temp = array[i];
-        // assigning position array[i+1] in position array[i]
-        array[i+1] = array[i];
-        // assigning position array[i+1] to data in temp
-        array[i+1] = temp;
-        // indicate a swap occured
-        swap = true;
-      }
-    }
-    // condition that indicats a swap as false and to exit the do-while
+  var counter = 0;
+
+    // body...
+      do {
+        swap = false;
+  setInterval(function () {
+        for ( var i = 0; i < numArray.length;i++) {
+          var temp;
+          if(numArray[i] > (numArray[i+1])) {
+            temp = numArray[i];
+            numArray[i] = numArray[i+1];
+            numArray[i+1] = temp;
+            swap = true;
+            counter ++;
+            document.getElementById('bubbleGraph').innerHTML = '';
+            createGraph(numArray);
+          }
+        }
+
+  }, 1000);
+
+
   } while (swap);
-  return array;
+
+
+
+
+
 }
+
+
+// // //============= div id="bubbleGraph"===============//
+function createGraph(numArray) {
+
+  var counter = 0;
+
+  for(var i = 0; i < numArray.length; i++) {
+
+    var p = document.createElement('div');
+    p.appendChild(document.createTextNode(numArray[i]));
+    p.style.background = 'black';
+    p.style.width = numArray[i] * 35 + 'px';
+    p.style.height = '30px';
+    p.setAttribute('id', counter++);
+
+    var element = document.getElementById('bubbleGraph');
+    element.appendChild(p);
+  }
+}
+
+
+// //============= div id="runIt"===============//
+
+var runIt = document.createElement('button');
+runIt.appendChild(document.createTextNode('RUN IT'));
+runIt.addEventListener('click', function() {
+  bubbleSort(numArray);
+  // var intervalID = setInterval(function() {bubbleSort(numArray);}, 3000);
+});
+var runItBut = document.getElementById('button');
+runItBut.appendChild(runIt);
+
