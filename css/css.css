@@ -1,6 +1,6 @@
 div {
   padding: 10px;
-
+  color: white;
   margin: 10px;
 }
 
@@ -17,5 +17,5 @@ div {
   font-family: cursive;
   font-size: 30px;
   background-color: red;
-
 }
+
